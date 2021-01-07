@@ -1,0 +1,36 @@
+{
+  "name": "cu_api",
+  "version": "1.0.0",
+  "description": "CU 24 HS API client",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diegocrzt/cu-api.git"
+  },
+  "keywords": [
+    "node",
+    "js",
+    "api"
+  ],
+  "author": "Diego Ramírez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/diegocrzt/cu-api/issues"
+  },
+  "homepage": "https://github.com/diegocrzt/cu-api#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "got": "^11.8.1",
+    "loglevel": "^1.7.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.17.0",
+    "eslint-config-prettier": "^7.1.0",
+    "mocha": "^8.2.1",
+    "prettier": "^2.2.1"
+  }
+}
