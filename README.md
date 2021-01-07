@@ -27,3 +27,4 @@ npm run start
 - Document properly
 - Complete the API (at least the available endpoints in the the website)
 - Add a test suite
+- Enforce some coding conventions
