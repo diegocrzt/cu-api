@@ -31,8 +31,11 @@ async function get_data(
   const person = await api.personal_data();
   log.info(`Person : ${JSON.stringify(person, null, 2)}`);
 
-  const must_change = await api.consulta_cambiar_pin();
+  const must_change = await api.query_pin_change();
   log.info(`Must Change : ${JSON.stringify(must_change, null, 2)}`);
+
+  const exchange_rate = await api.query_exchange();
+  log.info(`Exchange : ${JSON.stringify(exchange_rate, null,2)}`);
 
   return "OK";
 }
