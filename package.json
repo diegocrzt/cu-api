@@ -25,7 +25,8 @@
   "dependencies": {
     "dotenv": "^8.2.0",
     "got": "^11.8.1",
-    "loglevel": "^1.7.1"
+    "loglevel": "^1.7.1",
+    "md5": "^2.3.0"
   },
   "devDependencies": {
     "eslint": "^7.17.0",
