@@ -11,20 +11,20 @@ dotenv.config();
  * @param {string} credential_type - Single character for credential type (currently only "K" is supported).
  * @param {number} credential_number - Account/Credit Card number
  * @param {number|string} document_number - Physical or Juridical person identifier.
- * @param {string} password_checksum - A 32 long string with hashed password. Yet unknown hashing.
+ * @param {string} password - A 32 long string with hashed password. Yet unknown hashing.
  */
 async function get_data(
   api,
   credential_type,
   credential_number,
   document_number,
-  password_checksum
+  password
 ) {
   const jwt = await api.authenticate(
     credential_type,
     credential_number,
     document_number,
-    password_checksum
+    password
   );
   log.info(`Authenticated. Details : ${JSON.stringify(jwt, null, 2)}`);
 
@@ -45,7 +45,7 @@ if (require.main === module) {
     CREDENTIAL_TYPE,
     CREDENTIAL_NUMBER,
     DOCUMENT_NUMBER,
-    PASSWORD_CHECKSUM,
+    PASSWORD,
     API_USERNAME,
     API_PASSWORD,
     API_URI,
@@ -60,7 +60,7 @@ if (require.main === module) {
     CREDENTIAL_TYPE,
     CREDENTIAL_NUMBER,
     DOCUMENT_NUMBER,
-    PASSWORD_CHECKSUM
+    PASSWORD
   )
     .then((r) => log.info(`Result was ${r}`))
     .catch((err) => log.error(`Error was ${err}`))
