@@ -1,10 +1,10 @@
 # cu-api
 
-CU 24 Hs API client
+API client for Cooperativa Universitaria 24 HS.
 
 ## Requirements
 
-- nodejs v12+
+- nodejs => v12.x
 
 ## Setting up
 
@@ -25,6 +25,5 @@ npm run start
 ## TODO:
 
 - Document properly
-- Complete the API (at least the available endpoints in the the website)
 - Add a test suite
 - Enforce some coding conventions

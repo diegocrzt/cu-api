@@ -2,8 +2,6 @@ const { CUApi } = require("./lib/cu_api");
 const dotenv = require("dotenv");
 const log = require("loglevel");
 
-dotenv.config();
-
 /**
  * Obtains data from the API as an example of this CUApi client
  *
@@ -74,6 +72,7 @@ async function get_data(
 }
 
 if (require.main === module) {
+  dotenv.config();
   const {
     CREDENTIAL_TYPE,
     CREDENTIAL_NUMBER,
