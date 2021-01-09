@@ -35,7 +35,40 @@ async function get_data(
   log.info(`Must Change : ${JSON.stringify(must_change, null, 2)}`);
 
   const exchange_rate = await api.query_exchange();
-  log.info(`Exchange : ${JSON.stringify(exchange_rate, null,2)}`);
+  log.info(`Exchange : ${JSON.stringify(exchange_rate, null, 2)}`);
+
+  const saving_accounts = await api.saving_accounts();
+  log.info(`Saving Accounts : ${JSON.stringify(saving_accounts, null, 2)}`);
+
+  const wheel_savings = await api.wheel_savings();
+  log.info(`Wheel Savings : ${JSON.stringify(wheel_savings, null, 2)}`);
+
+  const programmed_saving_accounts = await api.programmed_saving_accounts();
+  log.info(
+    `Programmed savings : ${JSON.stringify(
+      programmed_saving_accounts,
+      null,
+      2
+    )}`
+  );
+
+  const certificate_of_deposits = await api.certificate_of_deposits();
+  log.info(
+    `Certificate of deposits : ${JSON.stringify(
+      certificate_of_deposits,
+      null,
+      2
+    )}`
+  );
+
+  const contributions = await api.contributions();
+  log.info(`Contributions : ${JSON.stringify(contributions, null, 2)}`);
+
+  const solidarity = await api.solidarity();
+  log.info(`Solidarity : ${JSON.stringify(solidarity, null, 2)}`);
+
+  const credit_cards = await api.credit_cards();
+  log.info(`Credit Cards : ${JSON.stringify(credit_cards, null, 2)}`);
 
   return "OK";
 }
@@ -55,13 +88,7 @@ if (require.main === module) {
 
   const api = new CUApi(API_URI, API_USERNAME, API_PASSWORD);
 
-  get_data(
-    api,
-    CREDENTIAL_TYPE,
-    CREDENTIAL_NUMBER,
-    DOCUMENT_NUMBER,
-    PASSWORD
-  )
+  get_data(api, CREDENTIAL_TYPE, CREDENTIAL_NUMBER, DOCUMENT_NUMBER, PASSWORD)
     .then((r) => log.info(`Result was ${r}`))
     .catch((err) => log.error(`Error was ${err}`))
     .finally(() => {
